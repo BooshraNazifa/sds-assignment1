@@ -42,8 +42,8 @@ def icp(A, B, max_iterations=200, tolerance=1e-5):
     T[:3, 3] = t
     return T
 
-points_A1 = read_points_from_file("/mnt/d/Carleton/Winter 2024/Surgical Data Scince/Assignment 1 part2/Examples/PointsA1.txt")
-points_B1 = read_points_from_file("/mnt/d/Carleton/Winter 2024/Surgical Data Scince/Assignment 1 part2/Examples/PointsB1.txt")
+points_A1 = read_points_from_file("./Examples/PointsA1.txt")
+points_B1 = read_points_from_file("./Examples/PointsB1.txt")
 
 print(points_A1)
 print(points_B1)
