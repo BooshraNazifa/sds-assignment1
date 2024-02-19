@@ -48,7 +48,7 @@ def segment_image_otsu_and_save(input_image_path, output_image_path):
 
 # Define the paths for input and output
 input_image_path = './Examples/ImageB3.JPG'
-output_image_path = './Examples/outputP4.jpg'
+output_image_path = './outputP4.jpg'
 
 # Apply the function and save the segmented image
 otsu_threshold_value = segment_image_otsu_and_save(input_image_path, output_image_path)
