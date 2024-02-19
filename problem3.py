@@ -2,17 +2,14 @@ import numpy as np
 from scipy.spatial.distance import cdist
 
 def read_points_from_file(file_path):
-    """Read points from the given file path."""
     return np.loadtxt(file_path, delimiter=',')
 
 def closest_points(A, B):
-    """Find the closest points in B for each point in A."""
     distances = cdist(A, B, metric='euclidean')
     indices = np.argmin(distances, axis=1)
     return B[indices]
 
 def compute_rigid_transform(A, B):
-    """Compute the optimal rigid transformation that aligns A to B."""
     centroid_A = np.mean(A, axis=0)
     centroid_B = np.mean(B, axis=0)
     AA = A - centroid_A
@@ -27,7 +24,6 @@ def compute_rigid_transform(A, B):
     return R, t
 
 def icp(A, B, max_iterations=200, tolerance=1e-5):
-    """Perform the ICP algorithm to compute the rigid transformation from A to B."""
     prev_error = float('inf')
     for i in range(max_iterations):
         B_closest = closest_points(A, B)
